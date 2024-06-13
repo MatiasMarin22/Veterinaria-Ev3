@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Mascotas</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/sweetalert2.min.js"></script>
+    <script src="utilidades.js"></script>
+    <script src="funciones.js" type="module"></script>
+</head>
+
+<body class="bg-light">
+    <header class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>Registro de Mascotas</h1>
+    </header>
+    <main class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-4">
+                <form action="" class="card" id="registro-mascota-form">
+                    <div class="card-header">
+                        <h5>Ingresa los detalles de la mascota</h5>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <label>Nombre de la mascota</label>
+                            <input type="text" class="form-control" id="nombreMascota" name="nombreMascota" onblur="verificar(this.id)"> 
+                            <div id="e-nombreMascota"></div>
+                        </div>
+                        <div>
+                            <label>Especie</label>
+                            <input type="text" class="form-control" id="especie" name="especie" onblur="verificar(this.id)">
+                            <div id="e-especie"></div>
+                        </div>
+                        <div>
+                            <label>Raza</label>
+                            <input type="text" class="form-control" id="raza" name="raza"onblur="verificar(this.id)">
+                            <div id="e-raza"></div>
+                        </div>
+                        <div>
+                            <label>Edad (años)</label>
+                            <input type="number" class="form-control" id="edadAnos" name="edadAnos" min="0" onblur="verificar(this.id)" min="0">
+                            <div id="e-edadAnos"></div>
+                        </div>
+                        <div>
+                            <label>Edad (meses)</label>
+                            <input type="number" class="form-control" id="edadMeses" name="edadMeses" min="0" onblur="verificar(this.id)" min="0" max="11">
+                            <div id="e-edadMeses"></div>
+                        </div>
+                        <div>
+                            <label>Peso (kg)</label>
+                            <input type="number" class="form-control" id="peso" name="peso" min="0"onblur="verificar(this.id)" min="0">
+                            <div id="e-peso"></div>
+                        </div>
+                        <div>
+                            <label>Nombre del dueño</label>
+                            <input type="text" class="form-control" id="nombreDueno" name="nombreDueno"onblur="verificar(this.id)">
+                            <div id="e-nombreDueno"></div>
+                        </div>
+                        <div>
+                            <label>Email del dueño</label>
+                            <input type="email" class="form-control" id="emailDueno" name="emailDueno"onblur="verificar(this.id)">
+                            <div id="e-emailDueno"></div>
+                        </div>
+                        <div>
+                            <label>Rut del dueño</label>
+                            <input type="text" class="form-control" id="rutDueno" name="rutDueno"onblur="verificar(this.id)">
+                            <div id="e-rutDueno"></div>
+                        </div>
+                        <div>
+                            <label>Teléfono del dueño</label>
+                            <input type="text" class="form-control" id="telefonoDueno" name="telefonoDueno" maxlength="9" onkeypress="return soloNumeros(event)">
+                            <div id="e-telefonoDueno"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <input type="reset" value="Limpiar" class="btn btn-info" onclick="limpiar()">
+                        <input type="button" id="btnGuardar" value="Guardar" class="btn btn-success" onclick="guardarMascota()">
+                    </div> 
+                </form>
+            </div>
+            <div class="col-8">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Nombre de la mascota</th>
+                                <th>Especie</th>
+                                <th>Raza</th>
+                                <th>Edad (años)</th>
+                                <th>Edad (meses)</th>
+                                <th>Peso (kg)</th>
+                                <th>Nombre del dueño</th>
+                                <th>Email del dueño</th>
+                                <th>Rut del dueño</th>
+                                <th>Teléfono del dueño</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenido">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/sweetalert2.min.js"></script>
+    <script src="utilidades.js"></script>
+    <script src="funciones.js" type="module"></script>
+</body>
+
+</html>
